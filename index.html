@@ -1,0 +1,360 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="description"
+    content="Can Test-Time Scaling Improve World Foundation Model?">
+  <meta name="keywords" content="World Model, Test-Time Scaling">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Can Test-Time Scaling Improve World Foundation Model?</title>
+
+  <script>
+    window.dataLayer = window.dataLayer || [];
+
+    function gtag() {
+      dataLayer.push(arguments);
+    }
+
+    gtag('js', new Date());
+
+    gtag('config', 'G-PYVRSFMDRL');
+  </script>
+
+  <link href="https://fonts.googleapis.co m/css?family=Google+Sans|Noto+Sans|Castoro" rel="stylesheet">
+
+  <link rel="stylesheet" href="./static/css/bulma.min.css">
+  <link rel="stylesheet" href="./static/css/bulma-carousel.min.css">
+  <link rel="stylesheet" href="./static/css/bulma-slider.min.css">
+  <link rel="stylesheet" href="./static/css/fontawesome.all.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+  <link rel="stylesheet" href="./static/css/index.css">
+  <!-- <link rel="icon" href="./static/images/favicon.svg"> -->
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script defer src="./static/js/fontawesome.all.min.js"></script>
+  <script src="./static/js/bulma-carousel.min.js"></script>
+  <script src="./static/js/bulma-slider.min.js"></script>
+  <script src="./static/js/index.js"></script>
+  <script src="./static/js/script.js"></script>
+
+</head>
+
+<body>
+
+
+  <section class="hero">
+    <div class="hero-body">
+      <div class="container is-max-desktop">
+        <div class="columns is-centered">
+
+          <div class="column has-text-centered">
+            <h1 class="title is-1 publication-title"><span style="color: #27ae60;font-weight: bolder;">SWIFT</span>: Can Test-Time Scaling Improve World Foundation Model?</h1>
+
+            <div class="is-size-5 publication-authors">
+              <span class="author-block">
+                <a href="https://wenyancong.com/">Wenyan Cong</a><sup>1</sup>,</span>
+              <span class="author-block">
+                <a href="https://zhuhanqing.github.io/">Hanqing Zhu</a><sup>1</sup>,</span>
+              <span class="author-block">
+                <a href="https://peihaowang.github.io/">Peihao Wang</a><sup>1</sup>,</span>
+              <span class="author-block">
+                <a href="https://pages.cs.wisc.edu/~bangya//">Bangya Liu</a><sup>2</sup>,</span>
+              <span class="author-block">
+                <a href="https://ir1d.github.io/">Dejia Xu</a><sup>1</sup>,</span>
+                <span class="author-block">
+                  <a href="https://kevin-2017.github.io/">Kevin Wang</a><sup>1</sup>,</span>
+                <span class="author-block">
+                <a href="https://www.ece.utexas.edu/people/faculty/david-z-pan">David Z. Pan</a><sup>1</sup>,</span>
+              <span class="author-block">
+                <a href="https://www.cs.cornell.edu/~yanwang/">Yan Wang</a><sup>3</sup>,</span>
+              <span class="author-block">
+                <a href="https://zhiwenfan.github.io/">Zhiwen Fan</a><sup>1</sup></span>
+              <span class="author-block">
+                <a href="https://express.adobe.com/page/CAdrFMJ9QeI2y/">Zhangyang Wang</a><sup>1</sup>
+  
+            </div>
+
+            <div class="is-size-5 publication-authors">
+              <span class="author-block"><sup>1</sup>The University of Texas at Austin</span>
+              <span class="author-block"><sup>2</sup>University of Wisconsin-Madison</span> 
+              <span class="author-block"><sup>3</sup>NVIDIA</span> 
+            </div>
+
+            <span class="link-block">
+              <a href="https://arxiv.org/abs/2503.24320"
+                 class="external-link button is-normal is-rounded is-dark">
+                <span class="icon">
+                    <i class="ai ai-arxiv"></i>
+                </span>
+                <span>arXiv</span>
+              </a>
+            </span>
+            <span class="link-block">
+              <a href="https://github.com/Mia-Cong/SWIFT"
+                class="external-link button is-normal is-rounded is-dark">
+                <span class="icon">
+                  <i class="fab fa-github"></i>
+                </span>
+                <span>Code</span>
+              </a>
+            </span>
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container is-max-desktop">
+      <div class="columns is-centered has-text-centered">
+        <div class="column is-full-width">
+          <div class="content has-text-justified">
+            <figure class="image" style="max-width: 100%; margin: 0 auto;">
+              <img src="./static/images/framework.png" alt="SWIFT Framework">
+            </figure>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  
+
+
+<section class="section">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3" style="color: #27ae60">Abstract</h2>
+        <div class="content has-text-justified">
+
+          <p>
+            World foundation models (WFMs), which simulate the physical world by predicting future states from current observations and inputs, 
+            have become central to many applications in physical intelligence, including autonomous driving and robotics. 
+            However, these models typically require substantial computational resources for pretraining and are further constrained 
+            by limited data availability during post-training.
+          </p>
+          <p>
+            To address this, we introduce <b>SWIFT</b>, a test-time scaling framework specifically designed for WFMs. 
+            Rather than relying on retraining or enlarging the model, SWIFT focuses on scaling computation during inference. 
+            It integrates an extensible WFM evaluation toolkit with process-level inference strategies, including fast tokenization, 
+            probability-based Top-K pruning, and efficient beam search.
+          </p>
+          <p>
+            Empirical results on the COSMOS model demonstrate that test-time scaling is not only feasible but can also follow 
+            compute-optimal trends. Our findings reveal that test-time scaling laws hold for WFMs, and that SWIFT offers a practical 
+            and scalable pathway to improve inference performance without modifying the model itself.
+          </p>
+          <p>
+          Key Contributions:
+          <ul>
+            <li><strong>WFM Evaluation Toolkit:</strong> A modular and extensible toolkit with metrics for evaluating WFMs across diverse aspects.</li>
+            <li><strong>SWIFT Framework:</strong> The first test-time scaling framework for WFMs, featuring a fast tokenizer, Top-K pruning, and beam search for efficient inference.</li>
+            <li><strong>Empirical Insights:</strong> SWIFT enables smaller models to rival or outperform larger ones under the same compute budget by leveraging test-time scaling.</li>
+          </ul> </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<section class="section">
+  <div class="container is-max-desktop">
+    <h2 class="title is-3 has-text-centered" style="color: #27ae60">Evaluation Toolkit</h2>
+    <figure class="image" style="max-width: 100%; margin: 0 auto;">
+      <img src="./static/images/failure.png" alt="Failure Case Example">
+      <figcaption class="mt-2">
+        <strong>Evaluation Toolkit for WFMs:</strong> We introduce a modular and extensible evaluation toolkit for world foundation models (WFMs), supporting diverse domains. It will be open-sourced to promote reproducibility and further research.
+      </figcaption>
+    </figure>
+
+      <!-- <div class="column is-full-width">
+        <div class="content has-text-justified">
+          <div class="hero-body">
+            <p class="has-text-centered">
+              
+            </p>
+            <ul style="margin-left: 1em;">
+              <li>
+                <strong>3D Consistency:</strong>
+                Evaluates geometric coherence using feedforward 3D foundation model.
+              </li>
+              <li>
+                <strong>Temporal Consistency:</strong>
+                Measures smoothness and object permanence across frames using CLIP and DINO similarities.
+              </li>
+              <li>
+                <strong>Spatial Relationship Awareness:</strong>
+                Checks if spatial layouts (e.g., human-environment interactions) follow physical plausibility.
+              </li>
+              <li>
+                <strong>Perceptual Quality:</strong>
+                Assesses visual appeal using the LAION aesthetic predictor; natural distortions are tolerated.
+              </li>
+              <li>
+                <strong>Text-to-Video Alignment:</strong>
+                Uses CLIPScore and X-CLIPScore to measure how well video content matches prompts.
+              </li>
+            </ul>
+          </div>
+        </div>
+    </div> -->
+  </div>
+</section>
+
+
+
+<section class="section">
+  <div class="container">
+    <div class="has-text-centered">
+      <h2 class="title is-3" style="color: #27ae60">SWIFT</h2>
+      <p>
+
+      </p>
+    </div>
+    <div class="content">
+      <p>
+        We adopt autonomous driving as our primary testbed to demonstrate test-time scaling—an ideal yet challenging domain with high demands for realism, diversity, and efficiency, aligning with COSMOS’s target use case.
+      </p>
+
+      <figure class="image" style="max-width: 40%; margin: 2em auto;">
+        <img src="./static/images/rule_prefer.png" alt="Verifier Result Example">
+      </figure>
+      <p>
+        <strong> We Use Rule-Based Rewards for Robustness and Extensibility </strong> since they consistently outperform preference-based ones.
+      </p>
+      <p>
+        <strong>Test-Time Scaling Exists in WFM</strong>—even with a naive best-of-N. Simply sampling more candidates improves quality. 
+      </p>
+      <p>
+        <strong>Test-Time Scaling Is Surprisingly Compute-Optimal:</strong> a 4B model with test-time scaling can match or exceed a 12B model under the same FLOPs.
+      </p>
+
+      <div class="columns is-centered" style="margin: 2em 0;">
+        <div class="column is-half">
+          <img src="./static/images/decoder_com.png" alt="Small Figure 1" style="max-width: 90%; height: auto;">
+          <p>Due to costly decoding with diffusion models, SWIFT uses a <strong>fast tokenizer decoder</strong> to accelerate decision process.</p>
+        </div>
+        <div class="column is-half">
+          <img src="./static/images/beam_topk_prob.png" alt="Small Figure 2" style="max-width: 78%; height: auto;">
+          <p><strong>Probability-based top-K pruning</strong> introduces controlled exploration, better than both top - 1 sampling and deterministic top-K sorting</p>
+        </div>
+      </div>
+      
+      
+      <figure class="image" style="max-width: 100%; margin: 2em auto;">
+        <img src="./static/images/search.png" alt="Search Strategy Visualization">
+            </figure>
+            <p>
+              <strong>Adapt Test-Time Scaling Strategy to WFMs Practically and Efficiently</strong> by using fast decoding, probability-based top-K pruning, and beam search.
+            </p>
+
+      <figure class="image" style="max-width: 70%; margin: 2em auto;">
+        <img src="./static/images/human.png" alt="Search Strategy Visualization">
+            </figure>
+            <p>
+              <strong>Human Study:</strong> outputs from the smaller model enhanced with test-time scaling are often preferred by human over those from the larger baseline.
+            </p>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container is-max-desktop">
+    <h2 class="title is-3 has-text-centered" style="color: #27ae60">Video Demos</h2>
+    <p class="has-text-centered mb-5">
+      <strong>Left:</strong> COSMOS-4B &nbsp; | &nbsp; <strong>Right:</strong> COSMOS-4B With SWIFT
+    </p>
+
+    <!-- Video Pair 1 -->
+    <div class="columns is-vcentered mb-5">
+      <div class="column">
+        <video autoplay muted loop controls style="width: 100%; border-radius: 8px;">
+          <source src="./static/videos/waymo_3_4.mp4" type="video/mp4">
+        </video>
+      </div>
+      <div class="column">
+        <video autoplay muted loop controls style="width: 100%; border-radius: 8px;">
+          <source src="./static/videos/waymo_3_4_swift.mp4" type="video/mp4">
+        </video>
+      </div>
+    </div>
+
+    <!-- Video Pair 2 -->
+    <div class="columns is-vcentered mb-5">
+      <div class="column">
+        <video autoplay muted loop controls style="width: 100%; border-radius: 8px;">
+          <source src="./static/videos/18_0.mp4" type="video/mp4">
+        </video>
+      </div>
+      <div class="column">
+        <video autoplay muted loop controls style="width: 100%; border-radius: 8px;">
+          <source src="./static/videos/18_0_swift.mp4" type="video/mp4">
+        </video>
+      </div>
+    </div>
+
+  <div class="container is-max-desktop">
+    <!-- <h2 class="title is-3 has-text-centered" style="color: #27ae60">Video Demos</h2> -->
+    <p class="has-text-centered mb-5">
+      <strong>Left:</strong> COSMOS-5B &nbsp; | &nbsp; <strong>Right:</strong> COSMOS-5B With SWIFT
+    </p>
+
+    <!-- Video Pair 1 -->
+    <div class="columns is-vcentered mb-5">
+      <div class="column">
+        <video autoplay muted loop controls style="width: 100%; border-radius: 8px;">
+          <source src="./static/videos/waymo_34_3_5b.mp4" type="video/mp4">
+        </video>
+      </div>
+      <div class="column">
+        <video autoplay muted loop controls style="width: 100%; border-radius: 8px;">
+          <source src="./static/videos/waymo_34_3_5b_swift.mp4" type="video/mp4">
+        </video>
+      </div>
+    </div>
+    <p class="has-text-centered is-size-7 mb-2">
+      The video captures a moment at an intersection in a suburban area. A white Mazda is prominently seen from behind, waiting at a green traffic light. The intersection is relatively empty with a few cars visible in the distance. The surroundings include trees and buildings, suggesting a residential or commercial neighborhood. The sky is clear with some clouds, indicating good weather conditions.
+    </p>
+
+    <!-- Video Pair 2 -->
+    <div class="columns is-vcentered mb-5">
+      <div class="column">
+        <video autoplay muted loop controls style="width: 100%; border-radius: 8px;">
+          <source src="./static/videos/waymo_47_3_5b.mp4" type="video/mp4">
+        </video>
+      </div>
+      <div class="column">
+        <video autoplay muted loop controls style="width: 100%; border-radius: 8px;">
+          <source src="./static/videos/waymo_47_3_5b_swift.mp4" type="video/mp4">
+        </video>
+      </div>
+    </div>
+    <p class="has-text-centered is-size-7 mb-2">
+      The video depicts a sunny day on a suburban street. Several cars are seen driving on a multi-lane road, with a white sedan in the foreground. The street is lined with trees and landscaped medians featuring pink flowering plants. Residential houses and utility poles are visible on the sides of the road. The sky is clear and blue, indicating good weather.
+    </p>
+
+</section>
+
+
+  <script>
+    new BeforeAfter({
+      id: '#example1'
+    });
+    new BeforeAfter({
+      id: '#example2'
+    });
+    new BeforeAfter({
+      id: '#example4'
+    });
+    new BeforeAfter({
+      id: '#example5'
+    });
+
+  </script>
+
+</body>
+
+</html>
